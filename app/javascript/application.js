@@ -1,15 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Greeting from "./components/Greeting";
-import { Provider } from "react-redux";
-import store from "./redux/store";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './components/App';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <Greeting />
-    </BrowserRouter>
-  </Provider>,
-  document.getElementById("root")
-);
+const root = createRoot(document.getElementById('root'));
+root.render(<App/>);

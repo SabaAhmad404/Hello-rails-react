@@ -1,13 +1,10 @@
-// app/javascript/redux/store.js
+import { configureStore } from "@reduxjs/toolkit";
+import greetingsSlice from "./greetings/greetingsSlice";
 
-import { createStore, applyMiddleware, combineReducers } from "redux";
-import thunk from "redux-thunk";
-import greetingsReducer from "./reducers/greetingsReducer";
-
-const rootReducer = combineReducers({
-  greetings: greetingsReducer,
+const store = configureStore({
+  reducer: {
+    greetings: greetingsSlice,
+  },
 });
-
-const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
